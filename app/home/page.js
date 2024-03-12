@@ -3,19 +3,19 @@ import NavBar from "@/components/NavBar";
 import React from "react";
 import Image from "next/image";
 import img1 from "../../public/wp1.jpg";
+import HomeSlider from "@/components/HomeSlider";
 
 const HomePage = () => {
 	return (
-		<div className="font-mono visible w-full min-h-lvh max-h-full bg-gradient-to-t via-white from-yellow-100 to-yellow-100">
-			<NavBar />
+		<div className="font-mono visible w-full min-h-lvh max-h-full bg-gradient-to-t via-white from-yellow-100 to-white">
 			<div className="w-full h-full flex flex-col items-center ">
-				<div className="text-3xl text-orange-500 font-bold mt-32">
+				<div className="text-2xl md:text-3xl text-orange-500 font-bold mt-32 text-center">
 					Welcome to Smart Street Lighting Solutions
 				</div>
-				<div className="w-[500px] h-[320px] m-5">
-					<Image src={img1} alt="Smart Street Lighting Solutions" />
+				<div className="w-[90%] md:w-[30%] my-5">
+					<HomeSlider />
 				</div>
-				<div className="w-[90%]  text-yellow-800">
+				<div className="w-[90%] md:w-[80%] max-md:text-sm text-yellow-800">
 					<div className="mb-8">
 						<h2 className="text-2xl mb-5 text-y-dark  font-bold">
 							Our Mission
@@ -65,7 +65,7 @@ const HomePage = () => {
 						</h2>
 						<p className="font-semibold">
 							Join us in our journey to build smarter, more sustainable cities.
-							Whether you're a municipality looking to upgrade your street
+							Whether you are a municipality looking to upgrade your street
 							lighting infrastructure or a technology enthusiast passionate
 							about IoT solutions, we invite you to explore our website and
 							learn more about our projects and initiatives.

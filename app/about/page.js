@@ -4,14 +4,13 @@ import React from "react";
 
 const page = () => {
 	return (
-		<div className=" font-semibold flex flex-col justify-center items-center p-20 font-mono visible w-full h-full bg-gradient-to-t from-yellow-100 via-white to-yellow-100">
-			<NavBar />
-			<div className=" font-semibold flex flex-col gap-5 justify-center items-start bg-white rounded-lg custom-shadow shadow-gray-500 p-20 mt-10">
+		<div className="flex flex-col justify-center items-center md:p-20 font-mono visible w-full h-full bg-gradient-to-t from-yellow-100 via-white to-white">
+			<div className=" max-md:text-sm max-lg:w-[85%] font-semibold flex flex-col gap-5 justify-center items-start md:p-20 mt-20 md:mt-10 text-yellow-800">
 				<div className=" text-4xl font-semibold  text-y-dark w-full text-center">
 					ABOUT US
 				</div>
 
-				<p className="text-gray-500 font-semibold ">
+				<p className=" font-semibold ">
 					Welcome to the Department of Electronics and Communication Engineering
 					at Vignan’s Institute of Information Technology (A), Visakhapatnam!
 					<br />
@@ -24,8 +23,8 @@ const page = () => {
 					(IoT) technology.
 				</p>
 
-				<h2 className="font-semibold text-2xl">Introduction</h2>
-				<p className="text-gray-500 font-semibold ">
+				<h2 className="text-y-dark font-semibold text-2xl">Introduction</h2>
+				<p className=" font-semibold ">
 					In modern cities, street lighting is crucial for safety and energy
 					efficiency. However, traditional systems often face issues like
 					delayed maintenance and wasted resources due to undetected faults. Our
@@ -39,42 +38,34 @@ const page = () => {
 					and more efficient for everyone.
 				</p>
 
-				<h2 className=" font-semibold text-2xl">Objectives</h2>
-				<p className="text-gray-500 font-semibold ">
-					Our primary objectives include:
-				</p>
-				<ul className="text-gray-500 font-semibold list-disc list-inside">
-					<li className="text-gray-500 font-semibold ">
+				<h2 className="text-y-dark font-semibold text-2xl">Objectives</h2>
+				<p className=" font-semibold ">Our primary objectives include:</p>
+				<ul className=" font-semibold list-disc list-inside">
+					<li className=" font-semibold ">
 						Development of an IoT-integrated sensor network implementation.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Integration of automated maintenance procedures and protocols.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Establishment of a web-based management system.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Optimization of energy consumption and sustainability.
 					</li>
-					<li className="text-gray-500 font-semibold ">
-						Fault detection and localization.
-					</li>
-					<li className="text-gray-500 font-semibold ">
-						Predictive maintenance.
-					</li>
-					<li className="text-gray-500 font-semibold ">
-						Remote monitoring and control.
-					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">Fault detection and localization.</li>
+					<li className=" font-semibold ">Predictive maintenance.</li>
+					<li className=" font-semibold ">Remote monitoring and control.</li>
+					<li className=" font-semibold ">
 						Ensuring communication reliability.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Ensuring data security, privacy, and cost optimization.
 					</li>
 				</ul>
 
-				<h2 className=" font-semibold text-2xl">Approach</h2>
-				<p className="text-gray-500 font-semibold ">
+				<h2 className="text-y-dark font-semibold text-2xl">Approach</h2>
+				<p className=" font-semibold ">
 					We utilize a combination of advanced sensors, including MQ-2, MQ-4,
 					MQ-6, MQ-9, and DHT-11, integrated with ESP32 microcontroller, to
 					monitor various parameters such as gas concentrations, temperature,
@@ -83,48 +74,46 @@ const page = () => {
 					proactive fault identification.
 				</p>
 
-				<h2 className=" font-semibold text-2xl">Accomplishments</h2>
-				<ul className="text-gray-500 font-semibold list-disc list-inside">
-					<li className="text-gray-500 font-semibold ">
+				<h2 className="text-y-dark font-semibold text-2xl">Accomplishments</h2>
+				<ul className=" font-semibold list-disc list-inside">
+					<li className=" font-semibold ">
 						Software simulation using Proteus software for system validation.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Acquired necessary hardware components and completed required
 						connections.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Developed code to process sensor data and trigger alerts.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Conducted simulations to demonstrate system functionality.
 					</li>
 				</ul>
 
-				<h2 className=" font-semibold text-2xl">Future Work</h2>
-				<p className="text-gray-500 font-semibold ">
-					Our future work involves:
-				</p>
-				<ul className="text-gray-500 font-semibold list-disc list-inside">
-					<li className="text-gray-500 font-semibold ">
+				<h2 className="text-y-dark font-semibold text-2xl">Future Work</h2>
+				<p className=" font-semibold ">Our future work involves:</p>
+				<ul className=" font-semibold list-disc list-inside">
+					<li className=" font-semibold ">
 						Integrating the ESP32 microcontroller with IoT platforms such as
 						IFTTT and Ubidots for receiving message alerts.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Enhancing communication reliability and security.
 					</li>
-					<li className="text-gray-500 font-semibold ">
+					<li className=" font-semibold ">
 						Implementing predictive maintenance algorithms for proactive fault
 						mitigation.
 					</li>
 				</ul>
 
-				<h2 className=" font-semibold text-2xl">Contact Us</h2>
-				<p className="text-gray-500 font-semibold ">
+				<h2 className="text-y-dark font-semibold text-2xl">Contact Us</h2>
+				<p className=" font-semibold ">
 					For inquiries or collaborations, please reach out to us at
 					20l31a0478@vignaniit.edu.in.
 				</p>
 
-				<p className="text-gray-500 font-semibold ">
+				<p className=" font-semibold ">
 					Join us in our journey towards creating smarter, more sustainable
 					urban environments through innovative technology solutions!
 				</p>

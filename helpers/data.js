@@ -1,4 +1,5 @@
 // Purpose: To fetch data from the API and return it to the frontend
+
 const streetLightData = [
 	{
 		id: "SL001",
@@ -39,17 +40,9 @@ export async function getData() {
 	const feeds = await res.json();
 	console.log(feeds);
 	if (feeds.length === 0) return streetLightData;
-	const {
-		field1,
-		field2,
-		field3,
-		field4,
-		field5,
-		field6,
-		field7,
-		field8,
-		created_at,
-	} = feeds[feeds.length - 1];
+	const { field1, field2, field3, field4 } = feeds[feeds.length - 1];
+	if (field1 === null || field2 === null || field3 === null || field4 === null)
+		return streetLightData;
 	const slData = [];
 	slData.push({
 		id: "SL001",
