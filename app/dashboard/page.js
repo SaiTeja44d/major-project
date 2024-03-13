@@ -11,67 +11,41 @@ import { TbCircuitBattery } from "react-icons/tb";
 import { PiPowerBold } from "react-icons/pi";
 import { MdPowerOff } from "react-icons/md";
 
-const streetLightData = [
-	{
-		id: "SL001",
-		location: "Main Street, City Center",
-		status: "Working",
-		current_value: 0.75,
-		voltage_value: 220,
-		is_on: true,
-	},
-	{
-		id: "SL002",
-		location: "Park Avenue, West End",
-		status: "Faulty",
-		current_value: 0,
-		voltage_value: 0,
-		is_on: false,
-	},
-	{
-		id: "SL003",
-		location: "Broadway, Downtown",
-		status: "Working",
-		current_value: 0.9,
-		voltage_value: 230,
-		is_on: true,
-	},
-	{
-		id: "SL004",
-		location: "Oak Street, Residential Area",
-		status: "Working",
-		current_value: 0.8,
-		voltage_value: 225,
-		is_on: true,
-	},
-];
-
 const DashBoard = () => {
-	const [data, setData] = useState([]);
-	const { setStreetLightData } = useStore();
+	const { streetLightData, setStreetLightData } = useStore();
+
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await getData();
-			console.log(response);
-			setData(response);
-			setStreetLightData(response);
-			data.forEach((d) => {
-				if (d.status === "Faulty") {
-					// alert(
-					// 	"Faulty Street Light Detected : ID : " +
-					// 		d.id +
-					// 		" at " +
-					// 		d.location +
-					// 		" with current value " +
-					// 		d.current_value +
-					// 		" and voltage value " +
-					// 		d.voltage_value
-					// );
-				}
-			});
+			try {
+				const response = await getData();
+				setStreetLightData(response);
+
+				response.forEach((d) => {
+					if (d.status === "Faulty") {
+						alert(
+							"Faulty Street Light Detected : ID : " +
+								d.id +
+								" at " +
+								d.location +
+								" with current value " +
+								d.current_value +
+								" and voltage value " +
+								d.voltage_value
+						);
+					}
+				});
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
 		};
-		setInterval(fetchData, 30000);
-	}, [data, setStreetLightData]);
+
+		fetchData();
+
+		const intervalId = setInterval(fetchData, 10000);
+
+		return () => clearInterval(intervalId);
+	}, [setStreetLightData]);
+
 	return (
 		<div className="font-mono visible w-full min-h-lvh max-h-full bg-gradient-to-t via-yellow-50 from-yellow-100 to-white">
 			<div className="w-full h-full flex flex-col items-center ">
@@ -87,10 +61,10 @@ const DashBoard = () => {
 							>
 								<div
 									className={`rounded-full h-20 w-20 p-2 ${
-										sl.is_on ? "bg-green-500" : "bg-red-500"
+										sl.status === "Working" ? "bg-green-500" : "bg-red-500"
 									} flex items-center justify-center`}
 								>
-									{sl.is_on ? (
+									{sl.status === "Working" ? (
 										<p className="text-2xl font-semibold text-white">
 											<FaCheck />
 										</p>
@@ -101,19 +75,22 @@ const DashBoard = () => {
 									)}{" "}
 								</div>
 								<h1 className="text-xl font-semibold">{sl.location}</h1>
-								<div className="flex flex-col items-center gap-2">
-									<h1 className="text-lg font-semibold">{sl.status}</h1>
+								<div className="flex flex-col items-center gap-2 w-full">
+									<h1 className="font-semibold">Light Status : {sl.status}</h1>
+									<h1 className="font-semibold">
+										Relay Condition : {sl.relayCondition}
+									</h1>
 									<div className="flex flex-col gap-2">
 										<h1 className=" font-semibold flex w-full gap-2">
 											<span className="flex items-center justify-between gap-2">
-												Current <BsLightning />:  {sl.current_value} A
+												Current <BsLightning />: {sl.current_value} A
 											</span>
 										</h1>
 										<h1 className=" font-semibold flex w-full gap-2">
 											<span className="flex gap-2 items-center justify-between">
 												Voltage <TbCircuitBattery />
 											</span>
-											:  {sl.voltage_value} V
+											: {sl.voltage_value} V
 										</h1>
 									</div>
 								</div>

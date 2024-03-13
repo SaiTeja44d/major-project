@@ -7,7 +7,7 @@ import HomeSlider from "@/components/HomeSlider";
 
 const HomePage = () => {
 	return (
-		<div className="font-mono visible w-full min-h-lvh max-h-full bg-gradient-to-t via-white from-yellow-100 to-white">
+		<div className="font-mono visible w-full min-h-lvh max-h-full">
 			<div className="w-full h-full flex flex-col items-center ">
 				<div className="text-2xl md:text-3xl text-orange-500 font-bold mt-32 text-center">
 					Welcome to Smart Street Lighting Solutions

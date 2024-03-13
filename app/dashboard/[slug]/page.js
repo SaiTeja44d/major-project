@@ -23,9 +23,13 @@ const Card = ({ params }) => {
 						<div className=" text-4xl font-semibold  text-y-dark w-full text-center">
 							{curStreetLight.location}
 						</div>
-						<h2 className=" font-semibold text-2xl mt-5">Status</h2>
+						<h2 className=" font-semibold text-2xl mt-5">Light Status</h2>
 						<p className="text-gray-500 font-semibold ">
 							{curStreetLight.status}
+						</p>
+						<h2 className=" font-semibold text-2xl mt-5">Relay Condition</h2>
+						<p className="text-gray-500 font-semibold ">
+							{curStreetLight.relayCondition}
 						</p>
 						<h2 className=" font-semibold text-2xl mt-5">Current Value</h2>
 						<p className="text-gray-500 font-semibold ">
@@ -34,10 +38,6 @@ const Card = ({ params }) => {
 						<h2 className=" font-semibold text-2xl mt-5">Voltage Value</h2>
 						<p className="text-gray-500 font-semibold ">
 							{curStreetLight.voltage_value} Volts
-						</p>
-						<h2 className=" font-semibold text-2xl mt-5">Power Supply</h2>
-						<p className="text-gray-500 font-semibold ">
-							{curStreetLight.is_on ? "Given" : "Not Given"}
 						</p>
 					</div>
 				</div>

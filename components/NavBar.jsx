@@ -15,7 +15,7 @@ const NavBar = () => {
                 <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/home' to='/home'>Home</Link></button>
                 <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/about' to='/about'>About</Link></button>
                 <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/dashboard' to='/dashboard'>DashBoard</Link></button>
-                <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/login' to='/login'>Logout</Link></button>
+                <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/login' to='/login'>LogIn</Link></button>
             </div>
         </div>
     )

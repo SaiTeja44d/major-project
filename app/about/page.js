@@ -1,10 +1,15 @@
 import NavBar from "@/components/NavBar";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { teamMembers } from "@/helpers/constants";
+import img1 from "../../public/dp.jpg";
+import { FaLinkedin } from "react-icons/fa";
+import { BiLogoGmail } from "react-icons/bi";
 
 const page = () => {
 	return (
-		<div className="flex flex-col justify-center items-center md:p-20 font-mono visible w-full h-full bg-gradient-to-t from-yellow-100 via-white to-white">
+		<div className="flex flex-col justify-center items-center md:p-20 font-mono visible w-full h-full">
 			<div className=" max-md:text-sm max-lg:w-[85%] font-semibold flex flex-col gap-5 justify-center items-start md:p-20 mt-20 md:mt-10 text-yellow-800">
 				<div className=" text-4xl font-semibold  text-y-dark w-full text-center">
 					ABOUT US
@@ -53,15 +58,6 @@ const page = () => {
 					<li className=" font-semibold ">
 						Optimization of energy consumption and sustainability.
 					</li>
-					<li className=" font-semibold ">Fault detection and localization.</li>
-					<li className=" font-semibold ">Predictive maintenance.</li>
-					<li className=" font-semibold ">Remote monitoring and control.</li>
-					<li className=" font-semibold ">
-						Ensuring communication reliability.
-					</li>
-					<li className=" font-semibold ">
-						Ensuring data security, privacy, and cost optimization.
-					</li>
 				</ul>
 
 				<h2 className="text-y-dark font-semibold text-2xl">Approach</h2>
@@ -74,39 +70,45 @@ const page = () => {
 					proactive fault identification.
 				</p>
 
-				<h2 className="text-y-dark font-semibold text-2xl">Accomplishments</h2>
-				<ul className=" font-semibold list-disc list-inside">
-					<li className=" font-semibold ">
-						Software simulation using Proteus software for system validation.
-					</li>
-					<li className=" font-semibold ">
-						Acquired necessary hardware components and completed required
-						connections.
-					</li>
-					<li className=" font-semibold ">
-						Developed code to process sensor data and trigger alerts.
-					</li>
-					<li className=" font-semibold ">
-						Conducted simulations to demonstrate system functionality.
-					</li>
-				</ul>
-
-				<h2 className="text-y-dark font-semibold text-2xl">Future Work</h2>
-				<p className=" font-semibold ">Our future work involves:</p>
-				<ul className=" font-semibold list-disc list-inside">
-					<li className=" font-semibold ">
-						Integrating the ESP32 microcontroller with IoT platforms such as
-						IFTTT and Ubidots for receiving message alerts.
-					</li>
-					<li className=" font-semibold ">
-						Enhancing communication reliability and security.
-					</li>
-					<li className=" font-semibold ">
-						Implementing predictive maintenance algorithms for proactive fault
-						mitigation.
-					</li>
-				</ul>
-
+				<h2 className="text-y-dark font-semibold text-2xl">Our Team</h2>
+				<div className="flex flex-col w-full items-center justify-center">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 w-full place-items-center">
+						{teamMembers.map((member, index) => (
+							<div
+								key={index}
+								className="bg-white rounded-xl custom-shadow p-5 flex flex-col items-center w-60"
+							>
+								<div className="w-32 h-32 rounded-full mb-4 overflow-hidden">
+									<Image
+										src={member.image}
+										alt={member.name}
+										className="transition-all ease-in-out duration-150 w-32 h-32 rounded-full hover:scale-110"
+										width={600}
+										height={600}
+									/>
+								</div>
+								<h2 className="text-xl font-semibold">{member.name}</h2>
+								<p className="text-sm text-gray-500 mb-2">{member.role}</p>
+								<div className="flex gap-4 items-center text-black">
+									<a
+										href={`mailto:${member.socialMedia.gmail}`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<BiLogoGmail className="w-6 h-6 transition-all ease-in-out duration-150 hover:scale-110" />
+									</a>
+									<a
+										href={member.socialMedia.linkedin}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<FaLinkedin className="w-5 h-5 transition-all ease-in-out duration-150 hover:scale-110" />
+									</a>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
 				<h2 className="text-y-dark font-semibold text-2xl">Contact Us</h2>
 				<p className=" font-semibold ">
 					For inquiries or collaborations, please reach out to us at
