@@ -1,8 +1,9 @@
 // Purpose: To fetch data from the API and return it to the frontend
 import { streetLightData, locations } from "./constants";
 
+const data_url = process.env.API_URL || "http://localhost:3000/api/";
 export async function getData() {
-	const res = await fetch("http://localhost:3000/api/");
+	const res = await fetch(data_url);
 	const feeds = await res?.json();
 	if (!feeds || feeds.length === 0) return streetLightData;
 
@@ -18,26 +19,32 @@ export async function getData() {
 	const extraLdrValue = parseInt(ldrValues[4]);
 	const isNight = extraLdrValue >= 50;
 
-	let eachCurrent = 0.00;
-	let count = 0.00;
+	let eachCurrent = 0.0;
+	let count = 0.0;
 
-	for(let i=0;i<4;i++){
+	for (let i = 0; i < 4; i++) {
 		ldrValues[i] = parseInt(ldrValues[i]);
 		relayStatus[i] = parseInt(relayStatus[i]);
-		if(relayStatus[i] === 1) count += 1.00;
+		if (relayStatus[i] === 1) count += 1.0;
 	}
 
 	eachCurrent = parseFloat(currentValue) / parseFloat(count);
-	console.log("current :"+ eachCurrent);
+	console.log("current :" + eachCurrent);
 
 	for (let i = 0; i < 4; i++) {
 		slData.push({
 			id: "Pole-" + i,
 			location: locations[i],
-			status: (isNight && relayStatus[i] === 1 && ldrValues[i] > 30) || (isNight && relayStatus[i] !== 1) ? "Faulty" : "Working",
+			status:
+				(isNight && relayStatus[i] === 1 && ldrValues[i] > 30) ||
+				(isNight && relayStatus[i] !== 1)
+					? "Faulty"
+					: "Working",
 			relayCondition: isNight && relayStatus[i] === 0 ? "Faulty" : "Good",
 			current_value:
-				relayStatus[i] === 1 && ldrValues[i] <= 30 ?  eachCurrent.toFixed(2) : "0",
+				relayStatus[i] === 1 && ldrValues[i] <= 30
+					? eachCurrent.toFixed(2)
+					: "0",
 			voltage_value: field2,
 			is_on: relayStatus[i] != 0 ? true : false,
 		});
