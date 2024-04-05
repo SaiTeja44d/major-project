@@ -12,7 +12,7 @@ export async function getData() {
 	if (field1 === null || field2 === null || field3 === null || field4 === null)
 		return streetLightData;
 
-	const slData = []; 
+	const slData = []; //
 	const currentValue = parseFloat(field1);
 	const relayStatus = field3.split(",");
 	const ldrValues = field4.split(",");
