@@ -14,14 +14,14 @@ const NavBar = () => {
                 {/* <div className='bg-gradient-to-t to-y-light from-white rounded-full p-2 pr-1 w-12 h-12 flex items-center justify-center shadow-md shadow-orange-900'><GiStreetLight className='text-orange-600 text-5xl'/></div> */}
                 <div className='w-12 h-12 rounded-full bg-transparent  shadow-md shadow-orange-900 overflow-hidden object-contain flex items-center justify-center'><Image src={icon} alt='icon' className='w-12 h-12 rounded-full'></Image></div>
                 <h1 className='max-lg:hidden text-2xl font-semibold'>NITE OWL</h1>
-                {isLoggedIn && <h1 className='max-lg:hidden text-2xl font-semibold'>Welcome {loggedUserData.name}</h1>}
             </div>
-            <div className='flex flex-row items-center gap-1 md:gap-4 w-[50%] justify-end'>
+            <div className='flex flex-row items-center gap-1 md:gap-4 md:w-[50%] justify-end'>
                 <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/home' to='/home'>Home</Link></button>
                 <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/about' to='/about'>About</Link></button>
                 <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/dashboard' to='/dashboard'>DashBoard</Link></button>
                 {!isLoggedIn && <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs'><Link href='/login' to='/login'>LogIn</Link></button>}
-                {isLoggedIn && <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs' onClick={()=> setIsLoggedIn(false)}>Logout</button>}
+                {isLoggedIn && <button type='button' className='transition-all duration-300 flex justify-center items-center px-2 py-1 border border-transparent rounded-lg bg-yellow-100 bg-opacity-0 hover:bg-opacity-30 hover:border-opacity-30 hover:text-black max-md:text-xs' onClick={()=>{setIsLoggedIn(false); alert("Succesfully loggedOut"); }}>Logout</button>}
+                {isLoggedIn && <div className='flex flex-row items-center gap-1 md:gap-4 rounded-full w-6 md:w-8 h-6 md:h-8 text-center text-amber-900 font-extrabold text-sm md:text-lg justify-center bg-y-light shadow-lg shadow-orange-900'>{loggedUserData.name.charAt(0).toUpperCase()}</div>}
             </div>
         </div>
     )

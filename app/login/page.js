@@ -41,10 +41,14 @@ const Login = () => {
 		if (data.success) {
 			setLoggedUserData({ name, password });
 			setIsLoggedIn(true);
+			alert("Login Successful "+name );
 			router.push("/dashboard");
 		}
 
-		else router.push("/home");
+		else{
+			alert("Invalid Credentials");
+			router.push("/home");
+		}
 		
 
 	};

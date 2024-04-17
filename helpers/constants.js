@@ -1,12 +1,12 @@
 export const teamMembers = [
 	{
-		name: "Kadavakollu Sai",
-		role: "Technical Expert",
-		image: "/dp4.jpg",
+		name: "Lolla Vamsi",
+		role: "Team Lead",
+		image: "/dp2.jpg",
 		socialMedia: {
-			gmail: "k.saiteja456@gmail.com",
+			gmail: "lollavamsi2003@gmail.com",
 			linkedin:
-				"https://www.linkedin.com/in/ganapathi-sai-teja-kalla-a9a645215/",
+				"https://www.linkedin.com/in/lolla-vamsi-070a91232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
 		},
 	},
 	{
@@ -16,17 +16,17 @@ export const teamMembers = [
 		socialMedia: {
 			gmail: "k.saiteja456@gmail.com",
 			linkedin:
-				"https://www.linkedin.com/in/ganapathi-sai-teja-kalla-a9a645215/",
+			"https://www.linkedin.com/in/ganapathi-sai-teja-kalla-a9a645215/",
 		},
 	},
 	{
-		name: "Lolla Vamsi",
-		role: "Team Lead",
-		image: "/dp2.jpg",
+		name: "Kadavakollu Sai",
+		role: "Technical Expert",
+		image: "/dp4.jpg",
 		socialMedia: {
-			gmail: "lollavamsi2003@gmail.com",
+			gmail: "kadavakollusai09@gmail.com",
 			linkedin:
-				"https://www.linkedin.com/in/lolla-vamsi-070a91232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+				"https://www.linkedin.com/in/sai-kadavakollu-4a8398239/",
 		},
 	},
 	{
@@ -44,7 +44,7 @@ export const teamMembers = [
 export const streetLightData = [
 	{
 		id: "Pole-1",
-		location: "Main Street, City Center",
+		location: "VIIT - Garden, Duvvada",
 		status: "Working",
 		relayCondition: "Good",
 		current_value: 0.75,
@@ -53,16 +53,16 @@ export const streetLightData = [
 	},
 	{
 		id: "Pole-2",
-		location: "Park Avenue, West End",
-		status: "Faulty",
+		location: "VIIT - Ground, Duvvada",
+		status: "Working",
 		relayCondition: "Good",
-		current_value: 0,
-		voltage_value: 0,
-		is_on: false,
+		current_value: 0.9,
+		voltage_value: 220,
+		is_on: true,
 	},
 	{
 		id: "Pole-3",
-		location: "Broadway, Downtown",
+		location: "VIIT - Canteen, Duvvada",
 		status: "Working",
 		relayCondition: "Good",
 		current_value: 0.9,
@@ -71,7 +71,7 @@ export const streetLightData = [
 	},
 	{
 		id: "Pole-4",
-		location: "Oak Street, Residential Area",
+		location: "VIIT - ECE-Dept, Duvvada",
 		status: "Working",
 		relayCondition: "Good",
 		current_value: 0.8,
