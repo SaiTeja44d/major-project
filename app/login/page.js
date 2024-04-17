@@ -6,10 +6,15 @@ import { GoTriangleDown } from "react-icons/go";
 import { MdOutlineRefresh } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
+import { useStore } from "../../store/store";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
 	const [name, setName] = useState("");
+	const router = useRouter();
 	const [password, setPassword] = useState("");
+	const { isLoggedIn, loggedUserData, setIsLoggedIn, setLoggedUserData } =
+		useStore();
 	// useEffect(() => {
 	// 	if (userStore.loggedIn) {
 	// 		userStore.userLogin(false);
@@ -22,7 +27,29 @@ const Login = () => {
 		setPassword(event.target.value);
 	};
 
-	const handleSubmit = async (e) => {};
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const response = await fetch("http://localhost:3000/api/", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			mode: "cors",
+			body: JSON.stringify({ name, password }),
+		});
+		const data = await response.json();
+		console.log(data);
+		console.log(isLoggedIn);
+		if (data.success) {
+			setLoggedUserData({ name, password });
+			setIsLoggedIn(true);
+			router.push("/dashboard");
+		}
+
+		else router.push("/home");
+		
+
+	};
 	return (
 		<div className="overflow-x-hidden font-sans h-svh w-full visible mt-14  bg-gradient-to-bl from-yellow-100 via-white to-yellow-100">
 			<div className="flex sm:flex-row justify-center items-center m-[5%] mt-4 md:mt-10 flex-col">
@@ -45,7 +72,7 @@ const Login = () => {
 						<div className="flex flex-row gap-2 mb-4 md:mb-3">
 							<input
 								className=" h-10 border border-gray-300 rounded-lg w-full p-2"
-								type="tel"
+								type="text"
 								value={name}
 								onChange={handleNameChange}
 								required
@@ -70,11 +97,11 @@ const Login = () => {
 							</button>
 						</div>
 						<div className="flex flex-row justify-center w-full mt-5">
-							<Link href="/dashboard" to="/dashboard" onClick={handleSubmit}>
+							{/* <Link href="/dashboard" to="/dashboard" onClick={handleSubmit}> */}
 								<button className="bg-y-dark hover:text-gray-200 px-10 text-white rounded-md h-12">
 									Login
 								</button>
-							</Link>
+							{/* </Link> */}
 						</div>
 					</form>
 				</div>

@@ -34,9 +34,9 @@ export const teamMembers = [
 		role: "Technical Expert",
 		image: "/dp3.jpg",
 		socialMedia: {
-			gmail: "k.saiteja456@gmail.com",
+			gmail: "bharathkumarnagireddi123@gmail.com",
 			linkedin:
-				"https://www.linkedin.com/in/ganapathi-sai-teja-kalla-a9a645215/",
+				"https://www.linkedin.com/in/nagireddi-bharath-kumar-naidu-77505b289?trk=contact-info",
 		},
 	},
 ];

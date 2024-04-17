@@ -1,7 +1,7 @@
 // Purpose: To fetch data from the API and return it to the frontend
 import { streetLightData, locations } from "./constants";
 
-const data_url = process.env.API_URL || "http://localhost:3000/api/";
+const data_url = process.env.API_URL || "https://niteowl-teja.netlify.app/api";
 export async function getData() {
 	const res = await fetch(data_url);
 	const feeds = await res?.json();
