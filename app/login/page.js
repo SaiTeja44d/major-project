@@ -29,7 +29,7 @@ const Login = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const response = await fetch("http://localhost:3000/api/", {
+		const response = await fetch("https://niteowl-teja.netlify.app/api", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -98,7 +98,7 @@ const Login = () => {
 						</div>
 						<div className="flex flex-row justify-center w-full mt-5">
 							{/* <Link href="/dashboard" to="/dashboard" onClick={handleSubmit}> */}
-								<button className="bg-y-dark hover:text-gray-200 px-10 text-white rounded-md h-12">
+								<button onClick={handleSubmit} className="bg-y-dark hover:text-gray-200 px-10 text-white rounded-md h-12">
 									Login
 								</button>
 							{/* </Link> */}
