@@ -34,12 +34,10 @@ const Login = () => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			mode: "no-cors",
+			mode: "cors",
 			body: JSON.stringify({ name, password }),
 		});
 		const data = await response.json();
-		console.log(data);
-		console.log(isLoggedIn);
 		if (data.success) {
 			setLoggedUserData({ name, password });
 			setIsLoggedIn(true);
