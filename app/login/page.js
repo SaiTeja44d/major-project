@@ -34,7 +34,7 @@ const Login = () => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			mode: "cors",
+			mode: "no-cors",
 			body: JSON.stringify({ name, password }),
 		});
 		const data = await response.json();
