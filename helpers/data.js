@@ -36,7 +36,7 @@ export async function getData() {
 			id: "Pole-" + i,
 			location: locations[i],
 			status:
-				(isNight && relayStatus[i] === 1 && ldrValues[i] > 30) ||
+				(isNight && relayStatus[i] === 1 && ldrValues[i] > 30 && ldrValues[i] < 90) ||
 				(isNight && relayStatus[i] !== 1)
 					? "Faulty"
 					: "Working",
